@@ -55,21 +55,23 @@ jobs:
             --exclude '.idea' \
             --exclude 'dist' \
             ./ "staging/$MOD_DIR/"
+          test -f "staging/$MOD_DIR/info.json" || { echo "❌ info.json missing after staging"; exit 1; }
 
       - name: Create zip
         run: |
           mkdir -p dist
           pushd staging >/dev/null
-          zip -r "../dist/${{ steps.meta.outputs.name }}_${{ steps.meta.outputs.version }}.zip" "${{ steps.meta.outputs.name }}_${{ steps.meta.outputs.version }}"
+          zip -r "../dist/${{ steps.vars.outputs.artifact_name }}.zip" "${{ steps.vars.outputs.artifact_name }}"
           popd >/dev/null
           ls -lah dist
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.meta.outputs.name }}_${{ steps.meta.outputs.version }}
-          path: dist/${{ steps.meta.outputs.name }}_${{ steps.meta.outputs.version }}.zip
+          name: ${{ steps.vars.outputs.artifact_name }}
+          path: dist/${{ steps.vars.outputs.artifact_name }}.zip
           if-no-files-found: error
+          retention-days: 7
 
   release:
     needs: build-zip
@@ -80,12 +82,13 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: ${{ needs.build-zip.outputs.name }}_${{ needs.build-zip.outputs.version }}
+          name: ${{ needs.build-zip.outputs.artifact_name }}
           path: dist
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: dist/*.zip
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
