@@ -1,0 +1,46 @@
+{
+  "name": "pirateseal-qol-modpack",
+  "version": "1.0.0",
+  "title": "PirateSeal's QoL Modpack",
+  "description": "A zero-code modpack that installs a curated set of QoL mods.",
+  "author": "PirateSeal",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0.0",
+
+    "AutoDeconstruct >= 1.0.7",
+
+    "big-brother >= 2.0.1",
+
+    "bigger-artillery >= 0.7.4",
+
+    "bullet-trails >= 0.7.1",
+
+    "car-finder >= 2.0.0",
+
+    "ChangeInserterDropLane >= 1.1.0",
+    "flib >= 0.15.0",
+
+    "DiscoScience >= 2.0.1",
+
+    "electric_pole_free_light >= 0.0.3",
+
+    "even-distribution >= 2.0.2",
+
+    "factoryplanner >= 2.0.34",
+
+    "Fill4Me >= 0.12.1",
+
+    "Nanobots2 >= 3.3.2",
+
+    "qol_research >= 3.4.2",
+
+    "RateCalculator >= 3.3.7",
+
+    "squeak-through-2 >= 0.1.2",
+
+    "VehicleSnap >= 2.0.2",
+
+    "Waterfill_v17 >= 2.0.5"
+  ]
+}
