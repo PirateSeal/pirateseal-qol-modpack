@@ -8,7 +8,7 @@ This zero-code modpack automatically installs a handpicked selection of QoL mods
 
 ## Version Information
 
-- **Current Version:** 1.0.3
+- **Current Version:** 1.0.4
 - **Factorio Version:** 2.0+
 - **Author:** PirateSeal
 - **Release Date:** August 30, 2025
@@ -61,8 +61,21 @@ This zero-code modpack automatically installs a handpicked selection of QoL mods
 
 ## Changelog
 
+### Version 1.0.4 (2025-08-30)
+- Updated changelog with complete version history from git commits
+
+### Version 1.0.3 (2025-08-30)
+- Added thumbnail for modpack
+
+### Version 1.0.2 (2025-08-30)
+- Enhanced release process with improved artifact naming
+
+### Version 1.0.1 (2025-08-30)
+- Implemented GitHub Actions workflow for automated build and release
+- Added comprehensive project documentation
+
 ### Version 1.0.0 (2025-08-30)
-- Initial release: pure dependency pack
+- Initial release: QoL modpack for Factorio
 
 ## Support
 

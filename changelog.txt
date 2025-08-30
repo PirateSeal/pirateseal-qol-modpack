@@ -1,5 +1,27 @@
------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 2025-08-30
+  Changes:
+    - Updated changelog with complete version history from git commits
+---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 2025-08-30
+  Changes:
+    - Added thumbnail for modpack
+---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2025-08-30
+  Changes:
+    - Enhanced release process with improved artifact naming
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2025-08-30
+  Features:
+    - Implemented GitHub Actions workflow for automated build and release
+  Changes:
+    - Added comprehensive project documentation
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2025-08-30
   Changes:
-    - Initial release: pure dependency pack.
+    - Initial release: QoL modpack for Factorio
