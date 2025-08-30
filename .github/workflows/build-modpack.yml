@@ -4,12 +4,19 @@ on:
   push:
     branches: [ master, main ]
     tags:
-      - "v*.*.*"   # e.g. v1.0.0
+      - "v*.*.*"     # e.g. v1.0.0
   workflow_dispatch: {}
+
+permissions:
+  contents: write     # needed for action-gh-release
 
 jobs:
   build-zip:
     runs-on: ubuntu-latest
+    outputs:
+      name: ${{ steps.meta.outputs.name }}
+      version: ${{ steps.meta.outputs.version }}
+      artifact_name: ${{ steps.vars.outputs.artifact_name }}
 
     steps:
       - name: Checkout repository
@@ -23,22 +30,24 @@ jobs:
       - name: Read name and version from info.json
         id: meta
         run: |
-          if [ ! -f info.json ]; then
-            echo "❌ info.json not found at repo root."
-            exit 1
-          fi
+          test -f info.json || { echo "❌ info.json not found"; exit 1; }
           NAME=$(jq -r '.name' info.json)
           VERSION=$(jq -r '.version' info.json)
-
+          [ -n "$NAME" ] && [ "$NAME" != "null" ] || { echo "❌ .name missing"; exit 1; }
+          [ -n "$VERSION" ] && [ "$VERSION" != "null" ] || { echo "❌ .version missing"; exit 1; }
           echo "name=$NAME" >> "$GITHUB_OUTPUT"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          echo "📦 Mod: $NAME"
-          echo "🏷️ Version: $VERSION"
+          echo "📦 $NAME  🏷️ $VERSION"
+
+      - name: Compose artifact name
+        id: vars
+        run: |
+          echo "artifact_name=${{ steps.meta.outputs.name }}_${{ steps.meta.outputs.version }}" >> "$GITHUB_OUTPUT"
 
       - name: Stage files in proper folder name
         run: |
-          MOD_DIR="${{ steps.meta.outputs.name }}_${{ steps.meta.outputs.version }}"
-          mkdir -p staging/"$MOD_DIR"
+          MOD_DIR="${{ steps.vars.outputs.artifact_name }}"
+          mkdir -p "staging/$MOD_DIR"
           rsync -av \
             --exclude '.git*' \
             --exclude '.github' \
