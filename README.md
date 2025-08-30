@@ -8,7 +8,7 @@ This zero-code modpack automatically installs a handpicked selection of QoL mods
 
 ## Version Information
 
-- **Current Version:** 1.0.2
+- **Current Version:** 1.0.3
 - **Factorio Version:** 2.0+
 - **Author:** PirateSeal
 - **Release Date:** August 30, 2025
