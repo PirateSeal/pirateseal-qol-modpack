@@ -1,6 +1,6 @@
 {
   "name": "pirateseal-qol-modpack",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "title": "PirateSeal's QoL Modpack",
   "description": "A zero-code modpack that installs a curated set of QoL mods.",
   "author": "PirateSeal",
@@ -9,6 +9,8 @@
     "base >= 2.0.0",
 
     "AutoDeconstruct >= 1.0.7",
+
+    "belt-visualizer >= 2.0.2",
 
     "big-brother >= 2.0.1",
 

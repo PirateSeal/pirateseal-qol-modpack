@@ -8,7 +8,7 @@ This zero-code modpack automatically installs a handpicked selection of QoL mods
 
 ## Version Information
 
-- **Current Version:** 1.0.4
+- **Current Version:** 1.0.5
 - **Factorio Version:** 2.0+
 - **Author:** PirateSeal
 - **Release Date:** August 30, 2025
@@ -33,6 +33,7 @@ This zero-code modpack automatically installs a handpicked selection of QoL mods
 - **VehicleSnap** (≥2.0.2) - Snap vehicles to grid for better alignment
 
 ### Visual & Quality of Life
+- **belt-visualizer** (≥2.0.2) - Visualize belt contents and throughput for better factory optimization
 - **bullet-trails** (≥0.7.1) - Visual bullet trails for better combat feedback
 - **electric_pole_free_light** (≥0.0.3) - Electric poles provide free lighting
 - **bigger-artillery** (≥0.7.4) - Enhanced artillery range and visualization
@@ -60,6 +61,9 @@ This zero-code modpack automatically installs a handpicked selection of QoL mods
 - **Multilingual Support** - Available in English and French
 
 ## Changelog
+
+### Version 1.0.5 (2025-09-16)
+- Added belt-visualizer mod (≥2.0.2) for enhanced belt content and throughput visualization
 
 ### Version 1.0.4 (2025-08-30)
 - Updated changelog with complete version history from git commits
